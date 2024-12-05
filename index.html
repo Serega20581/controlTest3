@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Система</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>CRM Система</h1>
+    <input type="text" id="search" placeholder="Поиск клиентов...">
+  </header>
+  <main>
+    <button id="addClientBtn">Добавить клиента</button>
+    <table id="clientTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ФИО</th>
+          <th>Дата создания</th>
+          <th>Дата изменения</th>
+          <th>Контакты</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody id="clientTableBody"></tbody>
+    </table>
+  </main>
+
+  <!-- Модальное окно для добавления/редактирования клиента -->
+  <div id="clientModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="modalTitle">Добавить клиента</h2>
+      <form id="clientForm">
+        <div class="form-group">
+          <label for="name">Имя:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="surname">Фамилия:</label>
+          <input type="text" id="surname" name="surname" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Отчество:</label>
+          <input type="text" id="lastName" name="lastName">
+        </div>
+        
+        <div id="contactsContainer">
+          <label>Контакты:</label>
+          <button type="button" id="addContactBtn">Добавить контакт</button>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="saveClientBtn">Сохранить</button>
+          <button type="button" id="deleteClientBtn" style="display: none;">Удалить клиента</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
